@@ -67,6 +67,7 @@ function shutdown() {
 	process.exit(0);
 }
 
-server.listen({
-	port,
+const port = process.env.PORT || 7860;
+server.listen(port, () => {
+  console.log(`Ultraviolet is running on port ${port}`);
 });
